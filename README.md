@@ -1,2 +1,2 @@
 # contacts
-SpringBoot
+SpringBoot Web

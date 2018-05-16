@@ -12,6 +12,10 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.roamer.contacts")
 public class Entry {
 
+    /**
+     * 启动
+     * @param args
+     */
     public static void main(String[] args){
         SpringApplication.run(Entry.class, args);
     }
