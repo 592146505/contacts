@@ -1,0 +1,36 @@
+# 测试环境
+
+spring:
+
+  # 数据源配置
+  datasource:
+    driver-class-name: org.h2.Driver
+    #数据库支持多种连接模式和连接设置，不同的连接模式和连接设置是通过不同的URL来区分的，URL中的设置是不区分大小写
+    # 使用内存数据库（命名模式）
+    url: jdbc:h2:mem:testdb;MODE=Oracle
+    # 指定生成数据库的schema文件位置
+    schema: classpath:/sql/schema.sql
+    # 指定插入数据库语句的脚本位置
+    data: classpath:/sql/test-data.sql
+
+  # Spring Data JPA
+  jpa:
+    # 指定数据库类型
+    database: h2
+    # 打印sql
+    show-sql: true
+    hibernate:
+      # 根据model类会自动建立（更新）表的结构
+      ddl-auto: update
+      naming:
+        # 表字段生成策略
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    # 设置hibernate方言
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  # H2相关配置
+  h2:
+    # 开启H2控制台功能和访问地址。
+    console:
+      enabled: true
+      path: /h2-console
