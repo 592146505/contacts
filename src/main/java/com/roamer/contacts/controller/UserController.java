@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 用户控制层
+ *
  * @author roamer
  */
 @Controller
@@ -20,17 +21,17 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/index")
-    public String index(){
+    public String index() {
         return "user/index";
     }
 
     @RequestMapping(value = "/show")
     @ResponseBody
-    public String show(@RequestParam(value = "username") String username){
+    public String show(@RequestParam(value = "username") String username) {
         User user = userService.findUserByUsername(username);
-        if (null != user){
+        if (null != user) {
             return user.toString();
         }
-        return  "null";
+        return "null";
     }
 }
