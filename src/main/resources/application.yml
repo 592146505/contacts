@@ -15,3 +15,20 @@ spring:
       prefix: classpath:/templates/
       suffix: .html
     static-path-pattern: /static/**
+
+management:
+  security:
+    # 关闭安全认证
+    enabled: false
+#  port: 8088
+  #actuator的访问路径
+  context-path: /monitor
+# shutdown端点打开
+endpoints:
+  shutdown:
+    enabled: true
+# 应用信息
+info:
+  app:
+    name: spring-boot-actuator
+    version: 1.0.0
